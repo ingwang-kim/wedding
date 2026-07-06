@@ -106,7 +106,7 @@ const CONFIG = {
 
   // 배경음악 — audio 폴더에 파일을 넣고 경로만 맞춰주세요. src를 비워두면 버튼이 숨겨집니다.
   music: {
-    src: 'audio/bgm.mp3',
+    src: 'audio/bgm2.mp3',
     autoplay: true,
     volume: 0.5,
   },
