@@ -79,15 +79,27 @@ function buildCalendarHTML(weddingDate) {
 }
 
 // ---------- 4. 갤러리 ----------
+const GALLERY_PAGE_SIZE = 9; // 3x3
+
 function renderGallery() {
   const grid = document.getElementById('gallery-grid');
-  grid.innerHTML = CONFIG.gallery
-    .map((src, i) => `<img src="${src}" alt="갤러리 사진 ${i + 1}" data-index="${i}" loading="lazy" />`)
-    .join('');
+  const moreBtn = document.getElementById('gallery-more');
 
-  grid.querySelectorAll('img').forEach(img => {
-    img.addEventListener('click', () => openLightbox(Number(img.dataset.index)));
-  });
+  const renderUpTo = count => {
+    grid.innerHTML = CONFIG.gallery
+      .slice(0, count)
+      .map((src, i) => `<img src="${src}" alt="갤러리 사진 ${i + 1}" data-index="${i}" loading="lazy" />`)
+      .join('');
+
+    grid.querySelectorAll('img').forEach(img => {
+      img.addEventListener('click', () => openLightbox(Number(img.dataset.index)));
+    });
+
+    moreBtn.hidden = count >= CONFIG.gallery.length;
+  };
+
+  renderUpTo(Math.min(GALLERY_PAGE_SIZE, CONFIG.gallery.length));
+  moreBtn.addEventListener('click', () => renderUpTo(CONFIG.gallery.length));
 
   initLightbox();
 }
@@ -185,8 +197,8 @@ function showMapError(mapBox, err) {
 
 // ---------- 6. 계좌번호 ----------
 function renderAccounts() {
-  document.getElementById('groom-account').innerHTML = accountRowsHTML('신랑', CONFIG.groom);
-  document.getElementById('bride-account').innerHTML = accountRowsHTML('신부', CONFIG.bride);
+  document.getElementById('groom-account').innerHTML = accountRowsHTML(CONFIG.groom);
+  document.getElementById('bride-account').innerHTML = accountRowsHTML(CONFIG.bride);
 
   document.querySelectorAll('.account-toggle').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -201,15 +213,20 @@ function renderAccounts() {
     btn.addEventListener('click', () => copyToClipboard(btn.dataset.copy, '계좌번호가 복사되었습니다'));
   });
 }
-function accountRowsHTML(who, person) {
-  return `
+function accountRowsHTML(person) {
+  return person.accounts
+    .filter(a => a.number) // 번호 없는 항목(아직 안 채운 부모 계좌 등)은 표시하지 않음
+    .map(
+      a => `
     <div class="account-row">
       <div>
-        <div class="who">${who} · ${person.account.holder}</div>
-        <div class="num">${person.account.bank} ${person.account.number}</div>
+        <div class="who">${a.who} · ${a.holder}</div>
+        <div class="num">${a.bank} ${a.number}</div>
       </div>
-      <button data-copy="${person.account.number}">복사</button>
-    </div>`;
+      <button data-copy="${a.number}">복사</button>
+    </div>`
+    )
+    .join('');
 }
 
 // ---------- 7. 공유하기 ----------

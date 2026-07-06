@@ -7,9 +7,9 @@ const CONFIG = {
     title: '인광 ♥ 소진 결혼합니다',
     description: '2026년 11월 7일 토요일 오전 11시, 강변웨딩스퀘어에서 소중한 분들을 모십니다.',
     // 공유 미리보기에 뜨는 이미지 (정사각형에 가까운 비율 권장, 최소 400x400)
-    imageUrl: 'https://your-domain.example.com/images/og-image.jpg',
+    imageUrl: 'https://ik-sj.netlify.app/images/cover.jpg',
     // 배포 후 실제 접속 주소로 변경
-    url: 'https://your-domain.example.com/',
+    url: 'https://ik-sj.netlify.app/',
     // 카카오 디벨로퍼스(developers.kakao.com)에서 발급받은 JavaScript 키
     // 비워두면 '카카오톡 공유' 버튼 대신 '링크 복사'만 동작합니다.
     kakaoJsKey: '16ce0c7885a3b2d2c7cca62ce7b5741b',
@@ -22,25 +22,25 @@ const CONFIG = {
     phone: '010-4597-9851',
     father: '김철승',
     mother: '강경희',
-    account: {
-      bank: '신한은행',
-      number: '123456-78-901234',
-      holder: '김인광',
-    },
+    accounts: [
+      { who: '신랑', bank: '신한은행', number: '110-549-067679', holder: '김인광' },
+      { who: '신랑 아버지', bank: '하나은행', number: '350-890508-53307', holder: '김철승' },
+      { who: '신랑 어머니', bank: '하나은행', number: '37819022268', holder: '강경희' },
+    ],
   },
 
   // 신부 정보
   bride: {
     name: '경소진',
     label: '차녀',
-    phone: '010-8765-4321',
+    phone: '010-9111-2822',
     father: '경태준',
     mother: '주은혜',
-    account: {
-      bank: '신한은행',
-      number: '110-987-654321',
-      holder: '경소진',
-    },
+    accounts: [
+      { who: '신부', bank: '카카오뱅크', number: '3333-022861-782', holder: '경소진' },
+      { who: '신부 아버지', bank: '농협은행', number: '527031-52-074198', holder: '경태준' },
+      { who: '신부 어머니', bank: '국민은행', number: '631201-04-103601', holder: '주은혜' },
+    ],
   },
 
   // 인사말
@@ -78,15 +78,21 @@ const CONFIG = {
 
   // 갤러리 — images/gallery 폴더에 사진을 넣고 파일명만 맞춰주세요
   gallery: [
-    'images/gallery/1.jpg',
-    'images/gallery/2.jpg',
-    'images/gallery/3.jpg',
-    'images/gallery/4.jpg',
-    'images/gallery/5.jpg',
-    'images/gallery/6.jpg',
-    'images/gallery/7.jpg',
-    'images/gallery/8.jpg',
-    'images/gallery/9.jpg',
+    'images/gallery/1-1.jpg',
+    'images/gallery/2-1.jpg',
+    'images/gallery/3-3.jpg',
+    'images/gallery/4-2.jpg',
+    'images/gallery/1-2.jpg',
+    'images/gallery/2-3.jpg',
+    'images/gallery/1-4.jpg',
+    'images/gallery/3-1.jpg',
+    'images/gallery/4-1.jpg',
+    'images/gallery/1-5.jpg',
+    'images/gallery/2-2.jpg',
+    'images/gallery/1-3.jpg',
+    'images/gallery/3-2.jpg',
+    'images/gallery/4-3.jpg',
+    'images/gallery/2-4.jpg',
   ],
 
   // 커버(첫 화면) 이미지
