@@ -7,7 +7,7 @@ const CONFIG = {
     title: '인광 ♥ 소진 결혼합니다',
     description: '2026년 11월 7일 토요일 오전 11시, 강변웨딩스퀘어에서 소중한 분들을 모십니다.',
     // 공유 미리보기에 뜨는 이미지 (정사각형에 가까운 비율 권장, 최소 400x400)
-    imageUrl: 'https://ik-sj.netlify.app/images/cover.jpg',
+    imageUrl: 'https://ik-sj.netlify.app/images/og-image.jpg',
     // 배포 후 실제 접속 주소로 변경
     url: 'https://ik-sj.netlify.app/',
     // 카카오 디벨로퍼스(developers.kakao.com)에서 발급받은 JavaScript 키

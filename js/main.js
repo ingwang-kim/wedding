@@ -250,6 +250,7 @@ function initShare() {
         imageUrl,
         link: { mobileWebUrl: url, webUrl: url },
       },
+      buttons: [{ title: '청첩장 보기', link: { mobileWebUrl: url, webUrl: url } }],
     });
   });
 
