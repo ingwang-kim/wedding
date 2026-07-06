@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>인광 ♥ 소진 결혼합니다</title>
+
+<!-- 카카오톡/문자 공유 미리보기용 OG 태그 (실제 값은 js/config.js 및 배포 후 수정) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="인광 ♥ 소진 결혼합니다" />
+<meta property="og:description" content="2026년 11월 7일 토요일 오전 11시, 강변웨딩스퀘어에서 소중한 분들을 모십니다." />
+<meta property="og:image" content="https://your-domain.example.com/images/og-image.jpg" />
+<meta property="og:url" content="https://your-domain.example.com/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Pretendard:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<audio id="bgm" loop preload="auto"></audio>
+<button id="music-toggle" class="music-toggle" hidden aria-label="배경음악 재생/정지">
+  <span id="music-icon">&#9835;</span>
+</button>
+
+<div class="app">
+
+  <!-- 1. 커버 -->
+  <section id="cover" class="section cover">
+    <div class="cover-bg" style="background-image:url('images/cover.jpg')"></div>
+    <div class="cover-overlay"></div>
+    <div class="cover-content">
+      <p class="cover-eyebrow">WEDDING INVITATION</p>
+      <h1 class="cover-names"><span id="cover-groom">인광</span><span class="heart">♥</span><span id="cover-bride">소진</span></h1>
+      <p class="cover-date" id="cover-date">2026. 11. 7. SAT</p>
+    </div>
+    <div class="scroll-guide">SCROLL</div>
+  </section>
+
+  <!-- 2. 인사말 -->
+  <section id="greeting" class="section greeting reveal">
+    <h2 class="section-title" id="greeting-title">초대합니다</h2>
+    <p class="greeting-message" id="greeting-message"></p>
+    <div class="family-names">
+      <p><span id="groom-parents"></span>의 <span id="groom-label"></span> <strong id="groom-name"></strong></p>
+      <p><span id="bride-parents"></span>의 <span id="bride-label"></span> <strong id="bride-name"></strong></p>
+    </div>
+  </section>
+
+  <!-- 3. 일정 (D-day, 달력) -->
+  <section id="schedule" class="section schedule reveal">
+    <h2 class="section-title">예식 일정</h2>
+    <p class="wedding-date-label" id="wedding-date-label"></p>
+    <p class="dday" id="dday"></p>
+    <div class="calendar" id="calendar"></div>
+  </section>
+
+  <!-- 4. 갤러리 -->
+  <section id="gallery" class="section gallery reveal">
+    <h2 class="section-title">우리의 순간들</h2>
+    <div class="gallery-grid" id="gallery-grid"></div>
+  </section>
+
+  <!-- 5. 오시는 길 -->
+  <section id="location" class="section location reveal">
+    <h2 class="section-title">오시는 길</h2>
+    <p class="venue-name" id="venue-name"></p>
+    <p class="venue-address" id="venue-address"></p>
+    <div id="map" class="map-box"></div>
+    <div class="map-links" id="map-links"></div>
+    <div class="transit-info" id="transit-info"></div>
+  </section>
+
+  <!-- 6. 마음 전하실 곳 (계좌번호) -->
+  <section id="account" class="section account reveal">
+    <h2 class="section-title">마음 전하실 곳</h2>
+    <p class="account-desc">참석이 어려우신 분들을 위해<br />계좌번호를 안내드립니다.</p>
+    <div class="account-toggle-group">
+      <button class="account-toggle" data-target="groom-account">신랑측</button>
+      <button class="account-toggle" data-target="bride-account">신부측</button>
+    </div>
+    <div class="account-box" id="groom-account" hidden></div>
+    <div class="account-box" id="bride-account" hidden></div>
+  </section>
+
+  <!-- 7. 공유하기 -->
+  <section id="share" class="section share reveal">
+    <h2 class="section-title">공유하기</h2>
+    <div class="share-buttons">
+      <button id="kakao-share-btn" class="share-btn kakao">카카오톡 공유</button>
+      <button id="copy-link-btn" class="share-btn copy">링크 복사</button>
+    </div>
+  </section>
+
+</div>
+
+<!-- 라이트박스 (갤러리 확대 보기) -->
+<div id="lightbox" class="lightbox" hidden>
+  <button class="lightbox-close" id="lightbox-close">&times;</button>
+  <button class="lightbox-nav prev" id="lightbox-prev">&#10094;</button>
+  <img id="lightbox-img" src="" alt="" />
+  <button class="lightbox-nav next" id="lightbox-next">&#10095;</button>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="js/config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
