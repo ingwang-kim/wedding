@@ -145,14 +145,55 @@ html, body {
 }
 
 /* ---------- 3. 일정 ---------- */
+.wedding-info {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 18px 28px;
+  margin: 0 auto 20px;
+  border-top: 1px solid #b8b8b8;
+  border-bottom: 1px solid #b8b8b8;
+}
 .wedding-date-label {
   font-size: 16px;
-  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+.wedding-venue-label {
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  margin: 0;
 }
 .dday {
-  color: var(--color-accent);
-  font-weight: 600;
-  margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 40px;
+}
+.dday-num {
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  line-height: 1;
+  color: #fff;
+  background: var(--color-accent);
+  padding: 12px 26px 12px 30px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(58, 58, 58, 0.18);
+}
+.dday-caption {
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: var(--color-text);
+}
+.dday-caption em {
+  font-style: normal;
+  color: #d97b7b;
+  margin: 0 2px;
 }
 .calendar {
   border: 1px solid var(--color-line);
@@ -185,14 +226,21 @@ html, body {
 .calendar-grid .day.wedding-day {
   position: relative;
 }
-.calendar-grid .day.wedding-day span {
-  display: inline-flex;
+.calendar-grid .day.wedding-day::before {
+  content: '♥';
+  position: absolute;
+  inset: 0;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--color-accent);
+  color: var(--color-accent);
+  font-size: 30px;
+  line-height: 1;
+  pointer-events: none;
+}
+.calendar-grid .day.wedding-day span {
+  position: relative;
+  z-index: 1;
   color: #fff;
   font-weight: 600;
 }

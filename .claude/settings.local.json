@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(magick --version)",
+      "Bash(python -c \"from PIL import Image; print\\(Image.__version__\\)\")",
+      "Bash(python -c ' *)"
+    ]
+  }
+}

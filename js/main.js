@@ -34,6 +34,7 @@ function renderGreeting() {
 // ---------- 3. 일정 / 달력 ----------
 function renderSchedule() {
   document.getElementById('wedding-date-label').textContent = CONFIG.wedding.dateLabel;
+  document.getElementById('wedding-venue-label').textContent = CONFIG.wedding.venueName;
 
   const weddingDate = new Date(CONFIG.wedding.dateTime);
   const today = new Date();
@@ -43,9 +44,13 @@ function renderSchedule() {
   const diffDays = Math.round((wDay - today) / 86400000);
 
   const ddayEl = document.getElementById('dday');
-  if (diffDays > 0) ddayEl.textContent = `인광 소진의 결혼식이 ${diffDays}일 남았습니다`;
-  else if (diffDays === 0) ddayEl.textContent = '오늘 결혼식이 열립니다';
-  else ddayEl.textContent = '저희의 결혼식이 있었습니다';
+  if (diffDays > 0) {
+    ddayEl.innerHTML = `<span class="dday-caption">인광 <em>♥</em> 소진의 결혼식까지</span><span class="dday-num">D-${diffDays}</span>`;
+  } else if (diffDays === 0) {
+    ddayEl.innerHTML = `<span class="dday-caption">오늘 결혼식이 열립니다</span><span class="dday-num">D-DAY</span>`;
+  } else {
+    ddayEl.innerHTML = `<span class="dday-caption">저희의 결혼식이 있었습니다</span>`;
+  }
 
   document.getElementById('calendar').innerHTML = buildCalendarHTML(weddingDate);
 }
