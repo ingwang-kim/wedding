@@ -1,9 +1,9 @@
 :root {
-  --color-bg: #fffaf7;
-  --color-text: #4a4038;
-  --color-sub: #8a7d6f;
-  --color-accent: #c9a37a;
-  --color-line: #e8ddd0;
+  --color-bg: #ffffff;
+  --color-text: #333333;
+  --color-sub: #999999;
+  --color-accent: #3a3a3a;
+  --color-line: #ededed;
   --color-white: #ffffff;
   --font-serif: 'Gowun Batang', serif;
   --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -15,7 +15,7 @@
 html, body {
   margin: 0;
   padding: 0;
-  background: #ddd4c8;
+  background: #eeeeee;
   color: var(--color-text);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
@@ -71,7 +71,7 @@ html, body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  background-color: #b9ac9c;
+  background-color: #e0e0e0;
 }
 .cover-overlay {
   position: absolute;
@@ -205,7 +205,7 @@ html, body {
   object-fit: cover;
   border-radius: 6px;
   cursor: pointer;
-  background: #eee2d5;
+  background: #e8e8e8;
 }
 
 .lightbox {
@@ -262,7 +262,7 @@ html, body {
   width: 100%;
   min-height: 220px;
   border-radius: 12px;
-  background: #eee2d5;
+  background: #e8e8e8;
   margin-bottom: 16px;
   overflow: hidden;
 }

@@ -43,7 +43,7 @@ function renderSchedule() {
   const diffDays = Math.round((wDay - today) / 86400000);
 
   const ddayEl = document.getElementById('dday');
-  if (diffDays > 0) ddayEl.textContent = `신랑 신부의 결혼식이 ${diffDays}일 남았습니다`;
+  if (diffDays > 0) ddayEl.textContent = `인광 소진의 결혼식이 ${diffDays}일 남았습니다`;
   else if (diffDays === 0) ddayEl.textContent = '오늘 결혼식이 열립니다';
   else ddayEl.textContent = '저희의 결혼식이 있었습니다';
 
