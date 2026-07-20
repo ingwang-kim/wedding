@@ -18,6 +18,7 @@ const CONFIG = {
   // 신랑 정보
   groom: {
     name: '김인광',
+    givenName: '인광', // 인사말 등에서 성 없이 표기할 때 사용
     label: '차남',
     phone: '010-4597-9851',
     father: '김철승',
@@ -32,6 +33,7 @@ const CONFIG = {
   // 신부 정보
   bride: {
     name: '경소진',
+    givenName: '소진', // 인사말 등에서 성 없이 표기할 때 사용
     label: '차녀',
     phone: '010-9111-2822',
     father: '경태준',
@@ -70,8 +72,8 @@ const CONFIG = {
 
   // 지도 — kakaoJsKey를 넣으면 인터랙티브 지도가, 비워두면 image 경로의 약도 이미지가 표시됩니다.
   map: {
-    lat: 37.5358,
-    lng: 127.0946,
+    lat: 37.5355,
+    lng: 127.0954,
     kakaoJsKey: '7516dc6a1c1ee796663535bec2ddfd50',
     image: 'images/map.jpg',
   },

@@ -25,10 +25,10 @@ function renderGreeting() {
   document.getElementById('greeting-message').textContent = CONFIG.greeting.message;
   document.getElementById('groom-parents').textContent = `${CONFIG.groom.father}·${CONFIG.groom.mother}`;
   document.getElementById('groom-label').textContent = CONFIG.groom.label;
-  document.getElementById('groom-name').textContent = CONFIG.groom.name;
+  document.getElementById('groom-name').textContent = CONFIG.groom.givenName;
   document.getElementById('bride-parents').textContent = `${CONFIG.bride.father}·${CONFIG.bride.mother}`;
   document.getElementById('bride-label').textContent = CONFIG.bride.label;
-  document.getElementById('bride-name').textContent = CONFIG.bride.name;
+  document.getElementById('bride-name').textContent = CONFIG.bride.givenName;
 }
 
 // ---------- 3. 일정 / 달력 ----------

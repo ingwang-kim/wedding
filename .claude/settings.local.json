@@ -3,7 +3,10 @@
     "allow": [
       "Bash(magick --version)",
       "Bash(python -c \"from PIL import Image; print\\(Image.__version__\\)\")",
-      "Bash(python -c ' *)"
+      "Bash(python -c ' *)",
+      "Bash(node --check js/main.js)",
+      "Bash(node --check js/config.js)",
+      "Bash(curl -s -H \"User-Agent: wedding-invitation-app/1.0\" \"https://nominatim.openstreetmap.org/search?q=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B4%91%EC%A7%84%EA%B5%AC%20%EA%B4%91%EB%82%98%EB%A3%A8%EB%A1%9C56%EA%B8%B8%2085&format=json&limit=3&countrycodes=kr\")"
     ]
   }
 }
